@@ -1,0 +1,48 @@
+version: "3.9"
+
+services:
+  # SFTP 服務
+  sftp:
+    image: atmoz/sftp:latest
+    container_name: sftp-server
+    ports:
+      - "2222:22"  # 本地連 2222 -> 容器 22
+    volumes:
+      - ./data:/home/testuser/upload
+      - ./keys/id_rsa_jsch.pub:/home/testuser/.ssh/keys/id_rsa_jsch.pub:ro
+    command: testuser:password:1001
+
+  # FTP (無加密)
+#  ftp:
+#    image: stilliard/pure-ftpd:hardened
+#    container_name: ftp-server
+#    ports:
+#      - "2121:21"
+#      - "30000-30009:30000-30009" # 被動模式
+#    environment:
+#      PUBLICHOST: "localhost"
+#      FTP_USER_NAME: testuser
+#      FTP_USER_PASS: password
+#      FTP_USER_HOME: /home/testuser
+#    volumes:
+#      - ./data:/home/testuser
+
+  # FTPS (加密)
+#  ftps:
+#    image: stilliard/pure-ftpd:hardened
+#    container_name: ftps-server
+#    ports:
+#      - "2122:21"
+#      - "31000-31009:31000-31009"
+#    environment:
+#      PUBLICHOST: "localhost"
+#      FTP_USER_NAME: testuser
+#      FTP_USER_PASS: password
+#      FTP_USER_HOME: /home/testuser
+#      ADDED_FLAGS: "--tls=2" # 啟用強制 TLS
+#    volumes:
+#      - ./data:/home/testuser
+#      - ./certs:/etc/ssl/private  # 放置 TLS 憑證
+
+volumes:
+  data:

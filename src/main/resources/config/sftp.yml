@@ -1,0 +1,20 @@
+ftp:
+  taipeiSFTP:
+    host: "localhost"
+    port: 2222
+    username: "testuser"
+    password: "password"
+    privateKeyPath: "C:\\Users\\Tommy\\.ssh\\id_rsa_jsch"
+    dir:
+      upload: "/upload"
+      download: "/download"
+
+  funbankSFTP:
+    host: "ftp.funbank.com.tw"
+    port: 21
+    username: "your_username"
+    password: "your_password"
+    privateKeyPath:
+    dir:
+      upload: "/upload"
+      download: "/download"

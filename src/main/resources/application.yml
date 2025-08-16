@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: ftp-repo
+  config:
+    import: classpath:config/sftp.yml
