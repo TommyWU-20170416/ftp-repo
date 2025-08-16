@@ -13,19 +13,19 @@ services:
     command: testuser:password:1001
 
   # FTP (無加密)
-#  ftp:
-#    image: stilliard/pure-ftpd:hardened
-#    container_name: ftp-server
-#    ports:
-#      - "2121:21"
-#      - "30000-30009:30000-30009" # 被動模式
-#    environment:
-#      PUBLICHOST: "localhost"
-#      FTP_USER_NAME: testuser
-#      FTP_USER_PASS: password
-#      FTP_USER_HOME: /home/testuser
-#    volumes:
-#      - ./data:/home/testuser
+  ftp:
+    image: stilliard/pure-ftpd:hardened
+    container_name: ftp-server
+    ports:
+      - "2121:21"
+      - "30000-30009:30000-30009" # 被動模式
+    environment:
+      PUBLICHOST: 127.0.0.1
+      FTP_USER_NAME: testuser
+      FTP_USER_PASS: password
+      FTP_USER_HOME: /home/testuser
+    volumes:
+      - ./data:/home/testuser
 
   # FTPS (加密)
 #  ftps:

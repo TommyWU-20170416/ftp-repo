@@ -28,7 +28,10 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
+    // for SFTP operations
     implementation("org.apache.commons:commons-vfs2:2.10.0")
+    // for FTP operations
+    implementation("commons-net:commons-net:3.9.0")
     implementation("com.jcraft:jsch:0.1.55")
 }
 

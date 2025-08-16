@@ -1,4 +1,4 @@
-ftp:
+sftp:
   taipeiSFTP:
     host: "localhost"
     port: 2222

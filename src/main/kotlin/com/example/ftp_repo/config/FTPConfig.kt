@@ -1,25 +1,21 @@
 package com.example.ftp_repo.config
 
+import com.example.ftp_repo.config.properties.FTPProperty
 import com.example.ftp_repo.config.properties.SFTPProperty
+import com.example.ftp_repo.utils.FTPUtils
 import com.example.ftp_repo.utils.SFTPUtils
 import org.springframework.boot.context.properties.ConfigurationProperties
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
-@ConfigurationProperties(prefix = "sftp")
+@ConfigurationProperties(prefix = "ftp")
 @Configuration
-class SFTPConfig {
+class FTPConfig {
 
-    lateinit var taipeiSFTP: SFTPProperty
-    lateinit var funbankSFTP: SFTPProperty
-
+    lateinit var esunFTP: FTPProperty
     @Bean
-    fun taipeiSFTPUtil(): SFTPUtils {
-        return SFTPUtils(taipeiSFTP)
+    fun esunFTPUtil(): FTPUtils {
+        return FTPUtils(esunFTP)
     }
 
-//    @Bean
-//    fun funbankSFTPUtil(): SFTPUtils {
-//        return SFTPUtils(funbankSFTP)
-//    }
 }

@@ -1,4 +1,4 @@
-package com.example.ftp_repo
+package com.example.ftp_repo.config.properties
 
 data class SFTPProperty(
     val host: String,

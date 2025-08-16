@@ -1,25 +1,26 @@
-package com.example.ftp_repo.services
+package com.example.ftp_repo.service
 
+import com.example.ftp_repo.utils.FTPUtils
 import com.example.ftp_repo.utils.SFTPUtils
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.stereotype.Service
 
 @Service
-class SFTPService(
-    @Qualifier("taipeiSFTPUtil")val taipeiSFTPUtil: SFTPUtils
+class FTPService(
+    @Qualifier("esunFTPUtil")val esunFTPUtil: FTPUtils
 ) {
 
     fun uploadFile(
         filePath: String,
         remoteDir: String
     ): Boolean {
-        return taipeiSFTPUtil.upload(filePath, remoteDir)
+        return esunFTPUtil.upload(filePath, remoteDir)
     }
 
     fun downloadFile(
         remotePath: String,
         localFilePath: String
     ): Boolean {
-        return taipeiSFTPUtil.download(remotePath, localFilePath)
+        return esunFTPUtil.download(remotePath, localFilePath)
     }
 }

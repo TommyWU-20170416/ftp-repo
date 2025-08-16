@@ -2,4 +2,6 @@ spring:
   application:
     name: ftp-repo
   config:
-    import: classpath:config/sftp.yml
+    import:
+      - classpath:config/ftp.yml
+      - classpath:config/sftp.yml

@@ -1,6 +1,6 @@
 package com.example.ftp_repo.utils
 
-import com.example.ftp_repo.SFTPProperty
+import com.example.ftp_repo.config.properties.SFTPProperty
 import com.jcraft.jsch.JSch
 import org.apache.commons.vfs2.FileSystemOptions
 import org.apache.commons.vfs2.Selectors
